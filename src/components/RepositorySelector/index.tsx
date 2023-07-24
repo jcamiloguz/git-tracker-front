@@ -72,7 +72,7 @@ export const RepositorySelector = ({
                 </Emoji>
               </p>
               <a
-                className="mt-4 block cursor-pointer text-sm text-gray-100 underline "
+                className="mt-4 block w-fit cursor-pointer text-sm text-gray-100 underline "
                 href={repositoryMutation.data.data.data.html_url}
                 target="_blank"
                 rel="noreferrer"
@@ -81,7 +81,7 @@ export const RepositorySelector = ({
               </a>
               {repositoryMutation.data.data.data.homepage && (
                 <a
-                  className="mt-2 block cursor-pointer text-sm text-gray-100 underline "
+                  className="mt-2 block w-fit cursor-pointer text-sm text-gray-100 underline "
                   href={repositoryMutation.data.data.data.homepage}
                   target="_blank"
                   rel="noreferrer"
