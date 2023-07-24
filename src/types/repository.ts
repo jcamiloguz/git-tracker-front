@@ -1,12 +1,17 @@
+export enum repositoryType {
+  FRONTEND = 'frontend',
+  BACKEND = 'backend',
+}
 export interface IRepository {
   id: number
   node_id: string
+  type: repositoryType
   name: string
   full_name: string
   private: boolean
   owner: Owner
   html_url: string
-  description: null
+  description: string | null
   fork: boolean
   url: string
   forks_url: string

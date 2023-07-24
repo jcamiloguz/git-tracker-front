@@ -32,10 +32,17 @@ export interface IAuthor {
 
 export interface ICommitClass {
   message: string
+  committer: ICommitter
   tree: ITree
   url: string
   comment_count: number
   verification: IVerification
+}
+
+export interface ICommitter {
+  name: string
+  email: string
+  date: Date
 }
 
 export interface ITree {
