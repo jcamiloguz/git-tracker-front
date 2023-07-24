@@ -1,3 +1,4 @@
+import { toast } from 'react-hot-toast'
 import { ClipboardIcon } from '../../assets/icons/ClipboardIcon'
 
 export const CommitItem = () => {
@@ -32,6 +33,7 @@ export const CommitItem = () => {
             className="flex h-full cursor-pointer items-center "
             onClick={() => {
               navigator.clipboard.writeText('1c9b3')
+              toast.success('Copied to clipboard')
             }}
           >
             <ClipboardIcon />
