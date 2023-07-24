@@ -1,24 +1,26 @@
-import { useState } from 'react'
 import { RepositorySelector } from '../RepositorySelector'
 import { CommitList } from '../CommitList'
 
+import { useRepositories } from '../../hooks/useRepositories'
+
 export const Tracker = () => {
-  const [selectedTab, setSelectedTab] = useState<'frontend' | 'backend'>(
-    'frontend',
-  )
-
-  const handleTabChange = (tab: 'frontend' | 'backend') => {
-    setSelectedTab(tab)
-  }
-
+  const {
+    selectedTab,
+    handleRepositoryChange,
+    commitsMutation,
+    selectedRepositoryMutation,
+  } = useRepositories()
   return (
     <section className="relative">
       <RepositorySelector
         selectedTab={selectedTab}
-        handleTabChange={handleTabChange}
+        handleTabChange={handleRepositoryChange}
+        repositoryMutation={selectedRepositoryMutation}
       />
 
-      <CommitList />
+      {commitsMutation.isSuccess && (
+        <CommitList commits={commitsMutation.data.data.data} />
+      )}
     </section>
   )
 }
