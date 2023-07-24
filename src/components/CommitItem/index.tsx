@@ -19,7 +19,12 @@ export const CommitItem = ({ commit }: Props) => {
         >
           <Emoji>{commit.commit.message}</Emoji>
         </a>
-        <p className="hidden md:block">5 Jul</p>
+        <p className="hidden md:block">
+          {new Date(commit.commit.committer.date).toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+          })}
+        </p>
       </div>
       <a
         className=" mt-4 flex w-fit items-center gap-2"
