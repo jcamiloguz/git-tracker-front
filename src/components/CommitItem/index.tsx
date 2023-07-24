@@ -1,5 +1,6 @@
 import { toast } from 'react-hot-toast'
 import { ClipboardIcon } from '../../assets/icons/ClipboardIcon'
+import Emoji from 'react-emoji-render'
 
 export const CommitItem = () => {
   return (
@@ -7,7 +8,7 @@ export const CommitItem = () => {
       <div className="absolute left-[-36px]  top-0 z-10 h-8 w-8 rounded-full bg-gray-100 shadow-md"></div>
       <div className="flex justify-between">
         <h3 className="max-w-[512px] font-bold">
-          Feat: ✨ First commit Create vite project with react and typescript
+          <Emoji>Feat: :sparkles: First commit Create a nest project</Emoji>
         </h3>
         <p className="hidden md:block">5 Jul</p>
       </div>

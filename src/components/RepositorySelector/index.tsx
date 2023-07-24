@@ -1,3 +1,5 @@
+import Emoji from 'react-emoji-render'
+
 interface Props {
   selectedTab: string
   handleTabChange: (tab: 'frontend' | 'backend') => void
@@ -43,8 +45,10 @@ export const RepositorySelector = ({ handleTabChange, selectedTab }: Props) => {
       <div className="relative z-10 -translate-y-4 rounded-lg bg-[#CECECE]/[0.16] px-2 pb-4 pt-8 shadow-md backdrop-blur-sm">
         <div className="mx-auto ml-[45px] max-w-[542px] md:ml-auto">
           <p className="text-base text-gray-100 ">
-            Git tracker is a user-friendly app that displays the git commit
-            history of this current project
+            <Emoji>
+              Git tracker is a user-friendly app that displays the git commit
+              history of this current project
+            </Emoji>
           </p>
           <a
             className="mt-4 cursor-pointer text-sm text-gray-100 underline "
