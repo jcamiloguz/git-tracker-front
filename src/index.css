@@ -1,3 +1,20 @@
 @tailwind base;
+
+@layer base {
+  html {
+    @apply text-gray-100;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
+
+
+body {
+  background-color: #334155;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
