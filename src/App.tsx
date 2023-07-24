@@ -1,34 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Toaster } from 'react-hot-toast'
+import { Hero } from './components/Hero'
+import { Tracker } from './components/Tracker'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <QueryClientProvider client={queryClient}>
+      <main className="mx-auto min-h-[90vh] w-full max-w-[768px] ">
+        <Hero
+          Title="Git Tracker!"
+          description="Git tracker is a user-friendly app that displays the git commit history of this current project. It encourages well-defined commits and regular updates, promoting clarity and seamless collaboration within your team."
+        />
+        <Tracker />
+        <Toaster position="bottom-center" />
+      </main>
+    </QueryClientProvider>
   )
 }
 
