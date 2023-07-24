@@ -12,7 +12,7 @@ export const CommitItem = () => {
         <p className="hidden md:block">5 Jul</p>
       </div>
       <a
-        className="flex w-fit items-center gap-2"
+        className=" mt-4 flex w-fit items-center gap-2"
         href="http://github.com"
         target="_blank"
         rel="noreferrer"
@@ -26,7 +26,7 @@ export const CommitItem = () => {
         </figure>
         <span>Jcamiloguz</span>
       </a>
-      <div className="flex justify-between">
+      <div className="flex items-center justify-between">
         <div className="mt-2 flex items-center gap-2">
           <p className=" text-sm ">SHA: 1c9b3 </p>
           <button
