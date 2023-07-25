@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import {
   getAllRepositories,
   getRepository,
@@ -20,6 +20,7 @@ export const useRepositories = () => {
     queryKey: ['repositories'],
     queryFn: getAllRepositories,
   })
+
   const selectedRepositoryMutation = useQuery({
     queryKey: ['repository', selectedTab],
     queryFn: () => getRepository(selectedTab),
@@ -29,9 +30,7 @@ export const useRepositories = () => {
     queryKey: ['commits', selectedTab],
     queryFn: () => getRepositoryCommits(selectedTab),
   })
-  useEffect(() => {
-    console.log(commitsMutation.data)
-  }, [commitsMutation.data])
+
   return {
     selectedTab,
     handleRepositoryChange,

@@ -1,7 +1,7 @@
 import Emoji from 'react-emoji-render'
 import { IRepository, repositoryType } from '../../types/repository'
 import { UseQueryResult } from '@tanstack/react-query'
-import { AxiosResponse } from 'axios'
+import axios, { AxiosResponse } from 'axios'
 import { IResponse } from '../../api/config'
 
 interface Props {
@@ -55,7 +55,13 @@ export const RepositorySelector = ({
         <div className="mx-auto ml-[45px] max-w-[542px] md:ml-auto">
           {repositoryMutation.isError && (
             <h2>
-              <Emoji>Something went wrong :fire:</Emoji>
+              {axios.isAxiosError(repositoryMutation.error) ? (
+                <Emoji>
+                  Error : {repositoryMutation.error.response?.data.message}
+                </Emoji>
+              ) : (
+                <Emoji>Something went wrong :fire:</Emoji>
+              )}
             </h2>
           )}
           {repositoryMutation.isLoading && (
